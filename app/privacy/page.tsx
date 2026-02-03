@@ -1,46 +1,32 @@
-export default function PrivacyPolicy() {
+export default function PrivacyPage() {
   return (
-    <main style={{ maxWidth: 800, margin: "80px auto", padding: 20 }}>
+    <section style={{ maxWidth: 800, margin: "100px auto", padding: 24 }}>
       <h1>Privacy Policy</h1>
 
       <p>
-        Your privacy is important to us. This Privacy Policy explains how Tick
-        collects, uses, and protects your information.
+        Tick respects your privacy. This policy explains how we handle your
+        data.
       </p>
 
       <h2>Information We Collect</h2>
       <p>
-        Tick does not collect personal data unless explicitly provided by the
-        user. Basic usage data may be collected to improve app performance.
+        We may collect basic usage data to improve app functionality and user
+        experience.
       </p>
 
-      <h2>How We Use Information</h2>
+      <h2>Data Usage</h2>
       <p>
-        Any collected information is used solely to improve the user experience
-        and app functionality.
+        Your data is used solely to operate and enhance the Tick application.
       </p>
 
-      <h2>Third-Party Services</h2>
+      <h2>Security</h2>
       <p>
-        Tick may use third-party services for analytics and infrastructure. These
-        services comply with standard privacy regulations.
+        We take reasonable measures to protect your information.
       </p>
 
-      <h2>Data Security</h2>
-      <p>
-        We take reasonable measures to protect your information from
-        unauthorized access or disclosure.
+      <p style={{ opacity: 0.6 }}>
+        Last updated: {new Date().toLocaleDateString()}
       </p>
-
-      <h2>Changes</h2>
-      <p>
-        This Privacy Policy may be updated from time to time. Continued use of
-        the app indicates acceptance of any changes.
-      </p>
-
-      <p style={{ marginTop: 40, opacity: 0.7 }}>
-        Last updated: 2026
-      </p>
-    </main>
+    </section>
   );
 }
