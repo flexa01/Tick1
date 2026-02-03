@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* NAV / LOGO */}
+      {/* NAV / LOGO SECTION */}
       <nav style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
         <img src="/icon.png" alt="Tick Logo" style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
       </nav>
@@ -23,7 +23,7 @@ export default function Home() {
         </div>
         <h1>Tick <br /> <span>Remember better. Live consistent.</span></h1>
         <p>Tick is a modern reminder application built to help you stay consistent, build habits, and turn everyday discipline into something rewarding.</p>
-        <button className="hero-btn" disabled>Mobile App — Coming Soon</button>
+        <button disabled>Mobile App — Coming Soon</button>
       </section>
 
       {/* INTRO */}
@@ -62,55 +62,53 @@ export default function Home() {
         </p>
       </section>
 
-      {/* CORE FEATURES */}
-      <section className="section dark">
-        <h2>Core Features</h2>
-        <div className="grid">
-          <div className="card">
-            <h3>Smart Reminders</h3>
-            <p>Clean, minimal reminders that respect your attention and focus.</p>
-          </div>
-          <div className="card">
-            <h3>Point System</h3>
-            <p>Earn points for every completed reminder and build positive momentum.</p>
-          </div>
-          <div className="card : 2026-02-01">
-            <h3>Customization</h3>
-            <p>Use your points to unlock themes, UI upgrades and future features.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section className="section">
-        <h2>How It Works</h2>
-        <ol className="steps">
-          <li>Create reminders for things that matter to you</li>
-          <li>Complete tasks and mark them as done</li>
-          <li>Earn points and personalize your experience</li>
-        </ol>
-      </section>
-
       {/* PHILOSOPHY */}
       <section className="section dark">
         <h2>Our Philosophy</h2>
         <p className="center-text">Tick is built around one simple idea: consistency beats intensity.</p>
-        <p className="center-text muted">Productivity should feel calm, motivating and sustainable.</p>
+        <p className="center-text" style={{opacity: 0.6, fontSize: '0.9rem'}}>Productivity should feel calm, motivating and sustainable.</p>
       </section>
 
       {/* FOOTER */}
-      <footer>
+      <footer style={{ padding: '60px 20px', textAlign: 'center', opacity: 0.6, borderTop: '1px solid #1f1f3a' }}>
         <p>© 2026 Tick Reminder. All rights reserved.</p>
       </footer>
 
-      {/* ÇEREZ İZNİ (COOKIE BANNER) */}
+      {/* COOKIE CONSENT BANNER */}
       {showCookie && (
-        <div className="cookie-banner">
-          <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
-          <button onClick={() => setShowCookie(false)}>İzin Ver ve Devam Et</button>
+        <div style={{
+          position: 'fixed', bottom: '30px', left: '50%', transform: 'translateX(-50%)',
+          width: '90%', maxWidth: '500px', background: '#141428', padding: '20px',
+          borderRadius: '20px', border: '1px solid #7c7cff', display: 'flex',
+          flexDirection: 'column', gap: '15px', zIndex: 9999, textAlign: 'center',
+          boxShadow: '0 10px 40px rgba(0,0,0,0.8)'
+        }}>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#eaeaf0' }}>
+            Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.
+          </p>
+          <button onClick={() => setShowCookie(false)} style={{
+            background: '#7c7cff', color: '#000', border: 'none', padding: '12px',
+            borderRadius: '12px', fontWeight: 'bold', cursor: 'pointer'
+          }}>İzin Ver ve Devam Et</button>
         </div>
       )}
 
-      {/* TÜM STİLLER BURADA */}
+      {/* STYLES */}
       <style>{`
-        * { box-sizing: border
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #0b0b14; color: #eaeaf0; font-family: system-ui, sans-serif; }
+        .hero { padding: 80px 20px 140px; text-align: center; background: radial-gradient(circle at top, #1b1b3a, #0b0b14); }
+        .hero h1 { font-size: 3.2rem; line-height: 1.2; margin-top: 20px; }
+        .hero span { color: #7c7cff; }
+        .hero p { max-width: 640px; margin: 25px auto; opacity: 0.85; }
+        .hero button { margin-top: 30px; padding: 15px 30px; border-radius: 14px; border: none; background: #7c7cff; color: #000; font-weight: bold; }
+        .section { padding: 90px 20px; max-width: 1100px; margin: auto; }
+        .section h2 { text-align: center; margin-bottom: 40px; }
+        .center-text { text-align: center; max-width: 720px; margin: 0 auto 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+        .card { background: #141428; padding: 28px; border-radius: 18px; }
+        .dark { background: #0f0f1f; border-top: 1px solid #1f1f3a; border-bottom: 1px solid #1f1f3a; }
+      `}</style>
+    </main>
+  );
+}
