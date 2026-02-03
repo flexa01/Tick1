@@ -1,63 +1,86 @@
+"use client";
+
 export default function Home() {
   return (
     <main>
       {/* HERO */}
       <section className="hero">
         <h1>
-          Remember Better. <br />
-          <span>Live More Consistently.</span>
+          Tick <br />
+          <span>Remember better. Live consistent.</span>
         </h1>
 
         <p>
-          Tick is a modern reminder application designed to help you stay
-          consistent, build habits, and feel rewarded for your progress.
+          Tick is a modern reminder application built to help you stay consistent,
+          build habits, and turn everyday discipline into something rewarding.
         </p>
 
         <button disabled>Mobile App — Coming Soon</button>
       </section>
 
-      {/* ABOUT */}
+      {/* INTRO */}
       <section className="section">
-        <h2>Why We Built Tick</h2>
+        <h2>A Different Kind of Reminder App</h2>
         <p className="center-text">
-          Most reminder apps only notify you — they don’t motivate you.
-          Tick changes that by turning daily consistency into a rewarding
-          experience.
+          Most reminder apps focus on alerts. Tick focuses on people.
+          We believe reminders should motivate, not overwhelm.
         </p>
+      </section>
 
-        <p className="center-text muted">
-          Every completed reminder earns you points. These points unlock
-          customization options, features, and future in-app upgrades.
-          Productivity shouldn’t feel like pressure — it should feel rewarding.
+      {/* PROBLEM */}
+      <section className="section dark">
+        <h2>The Problem With Traditional Reminders</h2>
+        <div className="grid">
+          <div className="card">
+            <h3>Notification Fatigue</h3>
+            <p>
+              Endless alerts eventually get ignored. Reminders lose their meaning.
+            </p>
+          </div>
+          <div className="card">
+            <h3>No Motivation</h3>
+            <p>
+              Being reminded doesn’t mean being encouraged to actually do the task.
+            </p>
+          </div>
+          <div className="card">
+            <h3>No Reward</h3>
+            <p>
+              Completing tasks feels empty when there’s nothing to gain.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUTION */}
+      <section className="section">
+        <h2>How Tick Solves This</h2>
+        <p className="center-text">
+          Tick transforms reminders into a rewarding system that values consistency,
+          progress, and personal growth.
         </p>
       </section>
 
       {/* FEATURES */}
       <section className="section dark">
         <h2>Core Features</h2>
-
         <div className="grid">
           <div className="card">
-            <h3>Simple & Smart Reminders</h3>
+            <h3>Smart Reminders</h3>
             <p>
-              Create reminders in seconds. Clean design, no unnecessary steps,
-              no distractions.
+              Clean, minimal reminders that respect your attention.
             </p>
           </div>
-
           <div className="card">
-            <h3>Point-Based Motivation</h3>
+            <h3>Point System</h3>
             <p>
-              Completing reminders earns points, reinforcing consistency
-              instead of guilt.
+              Earn points for every completed reminder and build positive momentum.
             </p>
           </div>
-
           <div className="card">
-            <h3>Customization & Upgrades</h3>
+            <h3>Customization</h3>
             <p>
-              Spend your points on themes, UI modifications and premium
-              features inside the app.
+              Use your points to unlock themes, UI upgrades and future features.
             </p>
           </div>
         </div>
@@ -65,56 +88,48 @@ export default function Home() {
 
       {/* HOW IT WORKS */}
       <section className="section">
-        <h2>How Tick Works</h2>
-
+        <h2>How It Works</h2>
         <ol className="steps">
-          <li>Create a reminder for something that matters to you</li>
-          <li>Complete the task and mark it as done</li>
-          <li>Earn points and unlock personalization options</li>
+          <li>Create reminders for things that matter to you</li>
+          <li>Complete tasks and mark them as done</li>
+          <li>Earn points and personalize your experience</li>
         </ol>
       </section>
 
-      {/* VISION */}
+      {/* PHILOSOPHY */}
       <section className="section dark">
-        <h2>Our Vision</h2>
-
+        <h2>Our Philosophy</h2>
         <p className="center-text">
-          Tick is not just a reminder app. It’s a habit-building system focused
-          on long-term consistency.
+          Tick is built around one simple idea: consistency beats intensity.
         </p>
-
         <p className="center-text muted">
-          Our goal is to create a lightweight, fast and enjoyable experience
-          that helps users improve their daily routines without stress.
+          We want productivity to feel calm, motivating and sustainable —
+          not stressful or demanding.
         </p>
       </section>
 
-      {/* ROADMAP */}
+      {/* FUTURE */}
       <section className="section">
-        <h2>What’s Coming Next</h2>
-
+        <h2>What’s Coming</h2>
         <div className="grid">
           <div className="card">
-            <h3>Mobile App Release</h3>
-            <p>iOS & Android versions with full sync support.</p>
+            <h3>Mobile Apps</h3>
+            <p>Native iOS and Android apps with full sync.</p>
           </div>
-
           <div className="card">
-            <h3>Advanced Reward System</h3>
-            <p>More unlockables, streak bonuses and seasonal themes.</p>
+            <h3>Advanced Rewards</h3>
+            <p>Streak bonuses, seasonal themes and more unlockables.</p>
           </div>
-
           <div className="card">
             <h3>Cloud Sync</h3>
-            <p>Access your reminders across devices securely.</p>
+            <p>Access your reminders securely across all devices.</p>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER – TEK VE NET */}
       <footer>
         <p>© 2026 Tick Reminder. All rights reserved.</p>
-
         <div className="links">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
@@ -123,9 +138,7 @@ export default function Home() {
 
       {/* STYLES */}
       <style>{`
-        * {
-          box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
           margin: 0;
@@ -158,13 +171,11 @@ export default function Home() {
         .hero button {
           margin-top: 30px;
           padding: 15px 30px;
-          font-size: 1rem;
           border-radius: 14px;
           border: none;
           background: #7c7cff;
           color: #000;
           opacity: 0.7;
-          cursor: not-allowed;
         }
 
         .section {
@@ -176,18 +187,15 @@ export default function Home() {
         .section h2 {
           text-align: center;
           margin-bottom: 40px;
-          font-size: 2.1rem;
         }
 
         .center-text {
           text-align: center;
-          max-width: 700px;
+          max-width: 720px;
           margin: 0 auto 20px;
         }
 
-        .muted {
-          opacity: 0.7;
-        }
+        .muted { opacity: 0.7; }
 
         .grid {
           display: grid;
@@ -201,14 +209,6 @@ export default function Home() {
           border-radius: 18px;
         }
 
-        .card h3 {
-          margin-bottom: 10px;
-        }
-
-        .card p {
-          opacity: 0.8;
-        }
-
         .dark {
           background: #0f0f1f;
           border-top: 1px solid #1f1f3a;
@@ -218,8 +218,7 @@ export default function Home() {
         .steps {
           max-width: 520px;
           margin: auto;
-          font-size: 1.1rem;
-          line-height: 2.1;
+          line-height: 2;
         }
 
         footer {
@@ -231,20 +230,3 @@ export default function Home() {
 
         footer .links {
           margin-top: 12px;
-          display: flex;
-          gap: 22px;
-          justify-content: center;
-        }
-
-        footer a {
-          color: #7c7cff;
-          text-decoration: none;
-        }
-
-        footer a:hover {
-          text-decoration: underline;
-        }
-      `}</style>
-    </main>
-  );
-}
