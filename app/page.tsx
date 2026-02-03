@@ -1,39 +1,50 @@
+import React from "react";
+
 export default function HomePage() {
   return (
-    <section style={{ maxWidth: 1100, margin: "100px auto", padding: "0 24px" }}>
+    <main
+      style={{
+        maxWidth: 1100,
+        margin: "100px auto",
+        padding: "0 24px",
+        fontFamily: "system-ui, -apple-system, BlinkMacSystemFont",
+      }}
+    >
       {/* HERO */}
-      <h1 style={{ fontSize: 60, lineHeight: 1.1 }}>
-        Tick  
-        <br />
-        Stay consistent. Get rewarded. ⏰✨
-      </h1>
+      <section style={{ marginBottom: 120 }}>
+        <h1 style={{ fontSize: 64, lineHeight: 1.1, marginBottom: 24 }}>
+          Tick ⏱️  
+          <br />
+          Your Time. Your Rules.
+        </h1>
 
-      <p style={{ fontSize: 18, opacity: 0.85, maxWidth: 700 }}>
-        Tick is a smart reminder app designed to turn daily tasks into progress.
-        Complete reminders, earn points, and customize your experience.
-      </p>
-
-      {/* SECTION 1 */}
-      <section style={{ marginTop: 120 }}>
-        <h2>What is Tick?</h2>
-        <p style={{ opacity: 0.8, maxWidth: 720 }}>
-          Tick is more than a reminder app. It’s a productivity companion that
-          rewards action. Every reminder you complete moves you forward.
+        <p style={{ fontSize: 20, maxWidth: 700, opacity: 0.85 }}>
+          Tick is a modern reminder and motivation platform designed to help you
+          stay consistent, focused, and rewarded for your time.  
+          No noise. No pressure. Just progress.
         </p>
       </section>
 
-      {/* SECTION 2 */}
-      <section style={{ marginTop: 80 }}>
-        <h2>Why reminders usually fail</h2>
-        <p style={{ opacity: 0.8, maxWidth: 720 }}>
-          Traditional reminder apps notify you and disappear. Tick focuses on
-          motivation by rewarding consistency instead of pressure.
+      {/* WHY TICK */}
+      <section style={{ marginBottom: 100 }}>
+        <h2 style={{ fontSize: 36, marginBottom: 16 }}>
+          Why Tick exists
+        </h2>
+
+        <p style={{ maxWidth: 800, fontSize: 18 }}>
+          Most reminder apps only notify you. Tick goes further.  
+          It turns your daily tasks into small wins by combining reminders,
+          points, and rewards into a single calm experience.
         </p>
       </section>
 
-      {/* SECTION 3 */}
-      <section style={{ marginTop: 80 }}>
-        <h2>How Tick motivates you</h2>
-        <p style={{ opacity: 0.8, maxWidth: 720 }}>
-          Completing reminders earns you points. These points unlock visual
-          upgrades, features, and personalization options inside the
+      {/* FEATURES */}
+      <section style={{ marginBottom: 100 }}>
+        <h2 style={{ fontSize: 36, marginBottom: 24 }}>
+          What Tick helps you do
+        </h2>
+
+        <ul style={{ fontSize: 18, lineHeight: 1.8 }}>
+          <li>✔ Never forget important tasks</li>
+          <li>✔ Build habits without stress</li>
+          <li>✔ Earn points by staying consistent</li>
