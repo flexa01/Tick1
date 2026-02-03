@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* NAV / LOGO */}
+      {/* NAV / LOGO SECTION */}
       <nav style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
         <img src="/icon.png" alt="Tick Logo" style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
       </nav>
@@ -65,15 +66,15 @@ export default function Home() {
       <section className="section dark">
         <h2>Our Philosophy</h2>
         <p className="center-text">Tick is built around one simple idea: consistency beats intensity.</p>
-        <p className="center-text muted" style={{opacity: 0.6}}>Productivity should feel calm, motivating and sustainable.</p>
+        <p className="center-text" style={{opacity: 0.6, fontSize: '0.9rem'}}>Productivity should feel calm, motivating and sustainable.</p>
       </section>
 
       {/* FOOTER */}
-      <footer>
+      <footer style={{ padding: '60px 20px', textAlign: 'center', opacity: 0.6, borderTop: '1px solid #1f1f3a' }}>
         <p>© 2026 Tick Reminder. All rights reserved.</p>
       </footer>
 
-      {/* ÇEREZ İZNİ (COOKIE BANNER) */}
+      {/* COOKIE CONSENT BANNER */}
       {showCookie && (
         <div style={{
           position: 'fixed', bottom: '30px', left: '50%', transform: 'translateX(-50%)',
@@ -92,18 +93,22 @@ export default function Home() {
         </div>
       )}
 
-      {/* TÜM STİLLER GERİ GELDİ */}
+      {/* STYLES */}
       <style>{`
         * { box-sizing: border-box; }
-        body { margin: 0; background: #0b0b14; color: #eaeaf0; font-family: sans-serif; }
+        body { margin: 0; background: #0b0b14; color: #eaeaf0; font-family: system-ui, sans-serif; }
         .hero { padding: 80px 20px 140px; text-align: center; background: radial-gradient(circle at top, #1b1b3a, #0b0b14); }
         .hero h1 { font-size: 3.2rem; line-height: 1.2; margin-top: 20px; }
         .hero span { color: #7c7cff; }
         .hero p { max-width: 640px; margin: 25px auto; opacity: 0.85; }
-        .hero button { margin-top: 30px; padding: 15px 30px; border-radius: 14px; border: none; background: #7c7cff; color: #000; opacity: 0.7; font-weight: bold; }
+        .hero button { margin-top: 30px; padding: 15px 30px; border-radius: 14px; border: none; background: #7c7cff; color: #000; font-weight: bold; }
         .section { padding: 90px 20px; max-width: 1100px; margin: auto; }
         .section h2 { text-align: center; margin-bottom: 40px; }
         .center-text { text-align: center; max-width: 720px; margin: 0 auto 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
         .card { background: #141428; padding: 28px; border-radius: 18px; }
-        .dark { background
+        .dark { background: #0f0f1f; border-top: 1px solid #1f1f3a; border-bottom: 1px solid #1f1f3a; }
+      `}</style>
+    </main>
+  );
+}
