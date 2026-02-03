@@ -3,8 +3,18 @@
 export default function Home() {
   return (
     <main>
-      {/* HERO */}
+      {/* NAV / LOGO SECTION - Sadece buraya logo eklendi */}
+      <nav style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
+        <img src="/icon.png" alt="Tick Logo" style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
+      </nav>
+
+      {/* HERO - Banner görseli arka plana veya tanıtıma bağlanabilir */}
       <section className="hero">
+        {/* Play Store için hazırladığın ana görseli burada sergiliyoruz */}
+        <div style={{ marginBottom: '20px' }}>
+          <img src="/opengraph-image.png" alt="Tick App Preview" style={{ maxWidth: '300px', borderRadius: '20px', boxShadow: '0 0 30px rgba(124, 124, 255, 0.3)' }} />
+        </div>
+        
         <h1>
           Tick <br />
           <span>Remember better. Live consistent.</span>
@@ -127,12 +137,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER – TEK VE NET */}
+      {/* FOOTER */}
       <footer>
         <p>© 2026 Tick Reminder. All rights reserved.</p>
         <div className="links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Use</a>
+          <a href="/privacy" style={{ color: '#7c7cff', marginRight: '15px' }}>Privacy Policy</a>
+          <a href="/terms" style={{ color: '#7c7cff' }}>Terms of Use</a>
         </div>
       </footer>
 
@@ -148,7 +158,7 @@ export default function Home() {
         }
 
         .hero {
-          padding: 140px 20px;
+          padding: 80px 20px 140px; /* Logo için üst boşluk biraz azaltıldı */
           text-align: center;
           background: radial-gradient(circle at top, #1b1b3a, #0b0b14);
         }
@@ -156,6 +166,7 @@ export default function Home() {
         .hero h1 {
           font-size: 3.2rem;
           line-height: 1.2;
+          margin-top: 20px;
         }
 
         .hero span {
@@ -176,6 +187,7 @@ export default function Home() {
           background: #7c7cff;
           color: #000;
           opacity: 0.7;
+          font-weight: bold;
         }
 
         .section {
@@ -226,7 +238,13 @@ export default function Home() {
           text-align: center;
           font-size: 0.9rem;
           opacity: 0.8;
+          border-top: 1px solid #1f1f3a;
         }
 
         footer .links {
           margin-top: 12px;
+        }
+      `}</style>
+    </main>
+  );
+}
