@@ -54,12 +54,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOLUTION */}
+      {/* CORE FEATURES (Eksik Olan Başlık Geri Geldi) */}
       <section className="section">
-        <h2>How Tick Solves This</h2>
-        <p className="center-text">
-          Tick transforms reminders into a rewarding system that values consistency, progress, and personal growth.
-        </p>
+        <h2>Core Features</h2>
+        <div className="grid">
+          <div className="card">
+            <h3>Smart Reminders</h3>
+            <p>Clean, minimal reminders that respect your attention and focus.</p>
+          </div>
+          <div className="card">
+            <h3>Point System</h3>
+            <p>Earn points for every completed reminder and build positive momentum.</p>
+          </div>
+          <div className="card">
+            <h3>Customization</h3>
+            <p>Use your points to unlock themes, UI upgrades and future features.</p>
+          </div>
+        </div>
       </section>
 
       {/* PHILOSOPHY */}
@@ -96,19 +107,4 @@ export default function Home() {
       {/* STYLES */}
       <style>{`
         * { box-sizing: border-box; }
-        body { margin: 0; background: #0b0b14; color: #eaeaf0; font-family: system-ui, sans-serif; }
-        .hero { padding: 80px 20px 140px; text-align: center; background: radial-gradient(circle at top, #1b1b3a, #0b0b14); }
-        .hero h1 { font-size: 3.2rem; line-height: 1.2; margin-top: 20px; }
-        .hero span { color: #7c7cff; }
-        .hero p { max-width: 640px; margin: 25px auto; opacity: 0.85; }
-        .hero button { margin-top: 30px; padding: 15px 30px; border-radius: 14px; border: none; background: #7c7cff; color: #000; font-weight: bold; }
-        .section { padding: 90px 20px; max-width: 1100px; margin: auto; }
-        .section h2 { text-align: center; margin-bottom: 40px; }
-        .center-text { text-align: center; max-width: 720px; margin: 0 auto 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
-        .card { background: #141428; padding: 28px; border-radius: 18px; }
-        .dark { background: #0f0f1f; border-top: 1px solid #1f1f3a; border-bottom: 1px solid #1f1f3a; }
-      `}</style>
-    </main>
-  );
-}
+        body { margin: 0; background: #0b0b14; color:
