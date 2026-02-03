@@ -4,48 +4,117 @@ export default function Home() {
       {/* HERO */}
       <section className="hero">
         <h1>
-          Never Forget. <br />
-          <span>Stay Consistent.</span>
+          Remember Better. <br />
+          <span>Live More Consistently.</span>
         </h1>
+
         <p>
-          A reminder app that rewards you for completing tasks.
-          Build habits, earn points, unlock upgrades.
+          Tick is a modern reminder application designed to help you stay
+          consistent, build habits, and feel rewarded for your progress.
         </p>
-        <button disabled>Mobile App Coming Soon</button>
+
+        <button disabled>Mobile App — Coming Soon</button>
+      </section>
+
+      {/* ABOUT */}
+      <section className="section">
+        <h2>Why We Built Tick</h2>
+        <p className="center-text">
+          Most reminder apps only notify you — they don’t motivate you.
+          Tick changes that by turning daily consistency into a rewarding
+          experience.
+        </p>
+
+        <p className="center-text muted">
+          Every completed reminder earns you points. These points unlock
+          customization options, features, and future in-app upgrades.
+          Productivity shouldn’t feel like pressure — it should feel rewarding.
+        </p>
       </section>
 
       {/* FEATURES */}
-      <section className="section">
-        <h2>Why Tick?</h2>
+      <section className="section dark">
+        <h2>Core Features</h2>
+
         <div className="grid">
           <div className="card">
-            <h3>Smart Reminders</h3>
-            <p>Simple reminders that keep you focused every day.</p>
+            <h3>Simple & Smart Reminders</h3>
+            <p>
+              Create reminders in seconds. Clean design, no unnecessary steps,
+              no distractions.
+            </p>
           </div>
+
           <div className="card">
-            <h3>Earn Points</h3>
-            <p>Complete reminders and earn points instantly.</p>
+            <h3>Point-Based Motivation</h3>
+            <p>
+              Completing reminders earns points, reinforcing consistency
+              instead of guilt.
+            </p>
           </div>
+
           <div className="card">
-            <h3>Unlock Rewards</h3>
-            <p>Use points for themes, features and custom upgrades.</p>
+            <h3>Customization & Upgrades</h3>
+            <p>
+              Spend your points on themes, UI modifications and premium
+              features inside the app.
+            </p>
           </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="section dark">
-        <h2>How It Works</h2>
+      <section className="section">
+        <h2>How Tick Works</h2>
+
         <ol className="steps">
-          <li>Create a reminder</li>
-          <li>Complete your task</li>
-          <li>Earn points & customize your app</li>
+          <li>Create a reminder for something that matters to you</li>
+          <li>Complete the task and mark it as done</li>
+          <li>Earn points and unlock personalization options</li>
         </ol>
+      </section>
+
+      {/* VISION */}
+      <section className="section dark">
+        <h2>Our Vision</h2>
+
+        <p className="center-text">
+          Tick is not just a reminder app. It’s a habit-building system focused
+          on long-term consistency.
+        </p>
+
+        <p className="center-text muted">
+          Our goal is to create a lightweight, fast and enjoyable experience
+          that helps users improve their daily routines without stress.
+        </p>
+      </section>
+
+      {/* ROADMAP */}
+      <section className="section">
+        <h2>What’s Coming Next</h2>
+
+        <div className="grid">
+          <div className="card">
+            <h3>Mobile App Release</h3>
+            <p>iOS & Android versions with full sync support.</p>
+          </div>
+
+          <div className="card">
+            <h3>Advanced Reward System</h3>
+            <p>More unlockables, streak bonuses and seasonal themes.</p>
+          </div>
+
+          <div className="card">
+            <h3>Cloud Sync</h3>
+            <p>Access your reminders across devices securely.</p>
+          </div>
+        </div>
       </section>
 
       {/* FOOTER */}
       <footer>
         <p>© 2026 Tick Reminder. All rights reserved.</p>
+
         <div className="links">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
@@ -65,18 +134,14 @@ export default function Home() {
           color: #eaeaf0;
         }
 
-        main {
-          width: 100%;
-        }
-
         .hero {
-          padding: 120px 20px;
+          padding: 140px 20px;
           text-align: center;
           background: radial-gradient(circle at top, #1b1b3a, #0b0b14);
         }
 
         .hero h1 {
-          font-size: 3rem;
+          font-size: 3.2rem;
           line-height: 1.2;
         }
 
@@ -85,16 +150,16 @@ export default function Home() {
         }
 
         .hero p {
-          max-width: 600px;
-          margin: 20px auto;
+          max-width: 640px;
+          margin: 25px auto;
           opacity: 0.85;
         }
 
         .hero button {
           margin-top: 30px;
-          padding: 14px 28px;
+          padding: 15px 30px;
           font-size: 1rem;
-          border-radius: 12px;
+          border-radius: 14px;
           border: none;
           background: #7c7cff;
           color: #000;
@@ -103,27 +168,37 @@ export default function Home() {
         }
 
         .section {
-          padding: 80px 20px;
+          padding: 90px 20px;
           max-width: 1100px;
           margin: auto;
         }
 
         .section h2 {
           text-align: center;
-          margin-bottom: 50px;
-          font-size: 2rem;
+          margin-bottom: 40px;
+          font-size: 2.1rem;
+        }
+
+        .center-text {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto 20px;
+        }
+
+        .muted {
+          opacity: 0.7;
         }
 
         .grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 24px;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 26px;
         }
 
         .card {
           background: #141428;
-          padding: 24px;
-          border-radius: 16px;
+          padding: 28px;
+          border-radius: 18px;
         }
 
         .card h3 {
@@ -141,23 +216,23 @@ export default function Home() {
         }
 
         .steps {
-          max-width: 500px;
+          max-width: 520px;
           margin: auto;
           font-size: 1.1rem;
-          line-height: 2;
+          line-height: 2.1;
         }
 
         footer {
-          padding: 40px 20px;
+          padding: 45px 20px;
           text-align: center;
           font-size: 0.9rem;
           opacity: 0.8;
         }
 
         footer .links {
-          margin-top: 10px;
+          margin-top: 12px;
           display: flex;
-          gap: 20px;
+          gap: 22px;
           justify-content: center;
         }
 
