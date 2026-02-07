@@ -11,15 +11,27 @@ export default function Home() {
 
   return (
     <main>
-      <nav style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
-        <img src="/icon.png" alt="Tick Logo" style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
+      <nav style={{ padding: "20px", display: "flex", justifyContent: "center" }}>
+        <img
+          src="/icon.png"
+          alt="Tick Logo"
+          style={{ width: "50px", height: "50px", objectFit: "contain" }}
+        />
       </nav>
 
       <section className="hero">
-        <div style={{ marginBottom: '20px' }}>
-          <img src="/opengraph-image.png" alt="Tick App Preview" style={{ maxWidth: '300px', borderRadius: '20px', boxShadow: '0 0 30px rgba(124, 124, 255, 0.3)' }} />
+        <div style={{ marginBottom: "20px" }}>
+          <img
+            src="/opengraph-image.png"
+            alt="Tick App Preview"
+            style={{
+              maxWidth: "300px",
+              borderRadius: "20px",
+              boxShadow: "0 0 30px rgba(124, 124, 255, 0.3)",
+            }}
+          />
         </div>
-        
+
         <h1>
           Tick <br />
           <span>Remember better. Live consistent.</span>
@@ -124,23 +136,47 @@ export default function Home() {
 
       <footer>
         <p>© 2026 Tick Reminder. All rights reserved.</p>
+        <p className="dev">DEVELOPED BY FLEXA</p>
       </footer>
 
       {showCookie && (
-        <div style={{
-          position: 'fixed', bottom: '30px', left: '50%', transform: 'translateX(-50%)',
-          width: '90%', maxWidth: '500px', background: '#141428', padding: '20px',
-          borderRadius: '20px', border: '1px solid #7c7cff', display: 'flex',
-          flexDirection: 'column', gap: '15px', zIndex: 9999, textAlign: 'center',
-          boxShadow: '0 10px 40px rgba(0,0,0,0.8)'
-        }}>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#eaeaf0' }}>
+        <div
+          style={{
+            position: "fixed",
+            bottom: "30px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "90%",
+            maxWidth: "500px",
+            background: "#141428",
+            padding: "20px",
+            borderRadius: "20px",
+            border: "1px solid #7c7cff",
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px",
+            zIndex: 9999,
+            textAlign: "center",
+            boxShadow: "0 10px 40px rgba(0,0,0,0.8)",
+          }}
+        >
+          <p style={{ margin: 0, fontSize: "0.9rem", color: "#eaeaf0" }}>
             Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.
           </p>
-          <button onClick={() => setShowCookie(false)} style={{
-            background: '#7c7cff', color: '#000', border: 'none', padding: '12px',
-            borderRadius: '12px', fontWeight: 'bold', cursor: 'pointer'
-          }}>İzin Ver ve Devam Et</button>
+          <button
+            onClick={() => setShowCookie(false)}
+            style={{
+              background: "#7c7cff",
+              color: "#000",
+              border: "none",
+              padding: "12px",
+              borderRadius: "12px",
+              fontWeight: "bold",
+              cursor: "pointer",
+            }}
+          >
+            İzin Ver ve Devam Et
+          </button>
         </div>
       )}
 
@@ -161,6 +197,7 @@ export default function Home() {
         .dark { background: #0f0f1f; border-top: 1px solid #1f1f3a; border-bottom: 1px solid #1f1f3a; }
         .steps { max-width: 520px; margin: auto; line-height: 2; }
         footer { padding: 45px 20px; text-align: center; font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #1f1f3a; }
+        footer .dev { margin-top: 8px; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; }
       `}</style>
     </main>
   );
