@@ -87,13 +87,11 @@ export default function Home() {
 
       <section className="section">
         <h2>How It Works</h2>
-        <div className="center-content">
-          <ol className="steps">
-            <li>Create reminders for things that matter to you</li>
-            <li>Complete tasks and mark them as done</li>
-            <li>Earn points and personalize your experience</li>
-          </ol>
-        </div>
+        <ol className="steps">
+          <li>Create reminders for things that matter to you</li>
+          <li>Complete tasks and mark them as done</li>
+          <li>Earn points and personalize your experience</li>
+        </ol>
       </section>
 
       <section className="section dark">
@@ -126,10 +124,44 @@ export default function Home() {
 
       <footer>
         <p>© 2026 Tick Reminder. All rights reserved.</p>
-        <p style={{ marginTop: '10px', fontSize: '0.85rem', color: '#7c7cff', fontWeight: 'bold', letterSpacing: '1px' }}>
-          DEVELOPED BY FLEXA
-        </p>
       </footer>
 
       {showCookie && (
-        <div
+        <div style={{
+          position: 'fixed', bottom: '30px', left: '50%', transform: 'translateX(-50%)',
+          width: '90%', maxWidth: '500px', background: '#141428', padding: '20px',
+          borderRadius: '20px', border: '1px solid #7c7cff', display: 'flex',
+          flexDirection: 'column', gap: '15px', zIndex: 9999, textAlign: 'center',
+          boxShadow: '0 10px 40px rgba(0,0,0,0.8)'
+        }}>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#eaeaf0' }}>
+            Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.
+          </p>
+          <button onClick={() => setShowCookie(false)} style={{
+            background: '#7c7cff', color: '#000', border: 'none', padding: '12px',
+            borderRadius: '12px', fontWeight: 'bold', cursor: 'pointer'
+          }}>İzin Ver ve Devam Et</button>
+        </div>
+      )}
+
+      <style>{`
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: system-ui, sans-serif; background: #0b0b14; color: #eaeaf0; }
+        .hero { padding: 80px 20px 140px; text-align: center; background: radial-gradient(circle at top, #1b1b3a, #0b0b14); }
+        .hero h1 { font-size: 3.2rem; line-height: 1.2; margin-top: 20px; }
+        .hero span { color: #7c7cff; }
+        .hero p { max-width: 640px; margin: 25px auto; opacity: 0.85; }
+        .hero button { margin-top: 30px; padding: 15px 30px; border-radius: 14px; border: none; background: #7c7cff; color: #000; font-weight: bold; opacity: 0.7; }
+        .section { padding: 90px 20px; max-width: 1100px; margin: auto; }
+        .section h2 { text-align: center; margin-bottom: 40px; }
+        .center-text { text-align: center; max-width: 720px; margin: 0 auto 20px; }
+        .muted { opacity: 0.7; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+        .card { background: #141428; padding: 28px; border-radius: 18px; }
+        .dark { background: #0f0f1f; border-top: 1px solid #1f1f3a; border-bottom: 1px solid #1f1f3a; }
+        .steps { max-width: 520px; margin: auto; line-height: 2; }
+        footer { padding: 45px 20px; text-align: center; font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #1f1f3a; }
+      `}</style>
+    </main>
+  );
+}
