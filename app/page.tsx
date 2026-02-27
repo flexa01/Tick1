@@ -4,42 +4,23 @@ import React, { useState, useEffect } from "react";
 
 // Telefon içinde dönecek metinler
 const appFeatures = [
-  {
-    icon: "🚀",
-    title: "Coming Soon",
-    desc: "Mobile App coming to Play Store!",
-  },
-  {
-    icon: "🔔",
-    title: "Smart Reminders",
-    desc: "Focus on your tasks, not notifications.",
-  },
-  {
-    icon: "💎",
-    title: "Rewards System",
-    desc: "Build consistency and earn rewards.",
-  },
+  { id: 1, icon: "🚀", title: "Coming Soon", desc: "Mobile App coming to Play Store!" },
+  { id: 2, icon: "🔔", title: "Smart Reminders", desc: "Focus on your tasks, not notifications." },
+  { id: 3, icon: "💎", title: "Rewards System", desc: "Build consistency and earn rewards." },
 ];
 
 export default function Home() {
   const [showCookie, setShowCookie] = useState(false);
   const [featureIndex, setFeatureIndex] = useState(0);
 
-  // Cookie Uyarısını Göster
   useEffect(() => {
     setShowCookie(true);
-  }, []);
-
-  // Telefon içindeki metinleri her 3 saniyede bir değiştir
-  useEffect(() => {
+    // Telefonun içindeki metinleri değiştiren döngü
     const timer = setInterval(() => {
-      setFeatureIndex((prevIndex) => (prevIndex + 1) % appFeatures.length);
-    }, 3000); // 3000ms = 3 saniye
-
-    return () => clearInterval(timer); // Bileşen kaldırıldığında zamanlayıcıyı temizle
+      setFeatureIndex((prev) => (prev + 1) % appFeatures.length);
+    }, 3000);
+    return () => clearInterval(timer);
   }, []);
-
-  const currentFeature = appFeatures[featureIndex];
 
   return (
     <main>
@@ -52,28 +33,29 @@ export default function Home() {
       </nav>
 
       <section className="hero">
-        {/* --- DİNAMİK TELEFON MOCKUP BAŞLANGICI --- */}
-        <div className="hero-mockup-section">
+        {/* --- DİNAMİK TELEFON MOCKUP --- */}
+        <div className="hero-mockup-wrapper">
           <div className="iphone-frame">
             <div className="iphone-screen">
-              {/* Burası dinamik olarak değişen içerik */}
-              <div className="app-content">
-                <div className="app-header">
-                  <img src="/icon.png" alt="Tick App Icon" className="app-icon" />
-                  <span className="app-name">Tick</span>
+              <div className="app-internal-content">
+                <div className="app-internal-header">
+                  <img src="/icon.png" alt="Tick" className="mini-icon" />
+                  <span className="app-internal-name">Tick</span>
                 </div>
-                <div className="feature-display fade-in" key={featureIndex}>
-                  <div className="feature-icon">{currentFeature.icon}</div>
-                  <h3>{currentFeature.title}</h3>
-                  <p>{currentFeature.desc}</p>
+                <div className="feature-slider">
+                  {appFeatures.map((f, i) => (
+                    <div key={f.id} className={`f-item ${i === featureIndex ? "active" : ""}`}>
+                      <div className="f-icon">{f.icon}</div>
+                      <h4>{f.title}</h4>
+                      <p>{f.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-            {/* Fiziksel detaylar */}
             <div className="notch"></div>
           </div>
         </div>
-        {/* --- DİNAMİK TELEFON MOCKUP BİTİŞİ --- */}
 
         <h1>
           Tick <br />
@@ -88,7 +70,7 @@ export default function Home() {
         <button disabled>Mobile App — Coming Soon</button>
       </section>
 
-      {/* DİĞER SECTİONLARIN (DEĞİŞMEDİ) */}
+      {/* --- TÜM SECTIONS (ORİJİNAL KODUN BİREBİR KOPYASI) --- */}
       <section className="section">
         <h2>A Different Kind of Reminder App</h2>
         <p className="center-text">
@@ -184,117 +166,7 @@ export default function Home() {
       </footer>
 
       {showCookie && (
-        <div
-          style={{
-            position: "fixed",
-            bottom: "30px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "90%",
-            maxWidth: "500px",
-            background: "#141428",
-            padding: "20px",
-            borderRadius: "20px",
-            border: "1px solid #7c7cff",
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            zIndex: 9999,
-            textAlign: "center",
-            boxShadow: "0 10px 40px rgba(0,0,0,0.8)",
-          }}
-        >
-          <p style={{ margin: 0, fontSize: "0.9rem", color: "#eaeaf0" }}>
-            Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.
-          </p>
-          <button
-            onClick={() => setShowCookie(false)}
-            style={{
-              background: "#7c7cff",
-              color: "#000",
-              border: "none",
-              padding: "12px",
-              borderRadius: "12px",
-              fontWeight: "bold",
-              cursor: "pointer",
-            }}
-          >
-            İzin Ver ve Devam Et
-          </button>
+        <div className="cookie-box">
+          <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
+          <button onClick={() => setShowCookie(false)}>İzin Ver ve Devam Et</button>
         </div>
-      )}
-
-      <style>{`
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: system-ui, sans-serif; background: #0b0b14; color: #eaeaf0; }
-        .hero { padding: 80px 20px 140px; text-align: center; background: radial-gradient(circle at top, #1b1b3a, #0b0b14); }
-        .hero h1 { font-size: 3.2rem; line-height: 1.2; margin-top: 20px; }
-        .hero span { color: #7c7cff; }
-        .hero p { max-width: 640px; margin: 25px auto; opacity: 0.85; }
-        .hero button { margin-top: 30px; padding: 15px 30px; border-radius: 14px; border: none; background: #7c7cff; color: #000; font-weight: bold; opacity: 0.7; }
-        .section { padding: 90px 20px; max-width: 1100px; margin: auto; }
-        .section h2 { text-align: center; margin-bottom: 40px; }
-        .center-text { text-align: center; max-width: 720px; margin: 0 auto 20px; }
-        .muted { opacity: 0.7; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
-        .card { background: #141428; padding: 28px; border-radius: 18px; }
-        .dark { background: #0f0f1f; border-top: 1px solid #1f1f3a; border-bottom: 1px solid #1f1f3a; }
-        .steps { max-width: 520px; margin: auto; line-height: 2; }
-        footer { padding: 45px 20px; text-align: center; font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #1f1f3a; }
-        footer .dev { margin-top: 8px; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; }
-
-        /* --- Yeni Dinamik Mockup Stilleri --- */
-        .hero-mockup-section {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 50px;
-        }
-
-        .iphone-frame {
-          position: relative;
-          width: 290px;
-          height: 600px;
-          background: #1a1a1a;
-          border: 10px solid #2a2a2a;
-          border-radius: 44px;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-          overflow: hidden;
-        }
-
-        .iphone-frame .notch {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 150px;
-          height: 26px;
-          background: #2a2a2a;
-          border-bottom-left-radius: 16px;
-          border-bottom-right-radius: 16px;
-          z-index: 10;
-        }
-
-        .iphone-screen {
-          width: 100%;
-          height: 100%;
-          border-radius: 34px;
-          overflow: hidden;
-          background: #10101a; /* Uygulamanın iç arka planı */
-          padding: 30px 15px; /* İçerik için boşluk */
-          display: flex;
-          flex-direction: column;
-        }
-
-        .app-content {
-          color: #eaeaf0;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-        }
-
-        .app-header {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
