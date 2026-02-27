@@ -11,16 +11,10 @@ export default function Home() {
 
   return (
     <main className="main-container">
-      {/* Navbar - Merkeze Hizalı */}
       <nav className="navbar">
-        <img
-          src="/icon.png"
-          alt="Tick Logo"
-          className="nav-logo"
-        />
+        <img src="/icon.png" alt="Tick Logo" className="nav-logo" />
       </nav>
 
-      {/* Hero Section - Tam Merkezde */}
       <section className="hero">
         <div className="hero-image-container">
           <img
@@ -45,7 +39,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 1 */}
+      {/* DİĞER TÜM SECTIONLAR (Hizalanmış ve Ortalı) */}
       <section className="section">
         <div className="section-inner">
           <h2>A Different Kind of Reminder App</h2>
@@ -56,7 +50,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 2 - Koyu Arka Planlı ve Ortalı */}
       <section className="section dark">
         <div className="section-inner">
           <h2>The Problem With Traditional Reminders</h2>
@@ -77,7 +70,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 3 */}
       <section className="section">
         <div className="section-inner">
           <h2>How Tick Solves This</h2>
@@ -88,7 +80,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 4 - Core Features */}
       <section className="section dark">
         <div className="section-inner">
           <h2>Core Features</h2>
@@ -109,7 +100,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 5 - How It Works */}
       <section className="section">
         <div className="section-inner">
           <h2>How It Works</h2>
@@ -123,7 +113,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6 - Philosophy */}
       <section className="section dark">
         <div className="section-inner">
           <h2>Our Philosophy</h2>
@@ -136,7 +125,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 7 - What's Coming */}
       <section className="section">
         <div className="section-inner">
           <h2>What’s Coming</h2>
@@ -170,54 +158,59 @@ export default function Home() {
       )}
 
       <style>{`
-        /* Reset & Base */
         * { box-sizing: border-box; }
         body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #0b0b14; color: #eaeaf0; overflow-x: hidden; }
         
-        /* Layout */
         .main-container { display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .navbar { width: 100%; padding: 30px; display: flex; justifyContent: center; }
+        .navbar { width: 100%; padding: 30px; display: flex; justify-content: center; }
         .nav-logo { width: 50px; height: 50px; object-fit: contain; }
 
-        /* Hero */
-        .hero { padding: 60px 20px 100px; text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; background: radial-gradient(circle at top, #1b1b3a, #0b0b14); }
-        .hero-image-container { margin-bottom: 30px; display: flex; justify-content: center; }
-        .hero-image { maxWidth: 320px; width: 100%; borderRadius: 24px; boxShadow: 0 0 50px rgba(124, 124, 255, 0.25); }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin: 20px 0; }
-        .hero span { color: #7c7cff; }
-        .hero p { max-width: 600px; margin: 0 auto; opacity: 0.8; font-size: 1.1rem; line-height: 1.6; }
-        .cta-button { margin-top: 40px; padding: 16px 32px; border-radius: 16px; border: none; background: #7c7cff; color: #000; font-weight: bold; cursor: not-allowed; opacity: 0.8; }
+        .hero { padding: 40px 20px 100px; text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; background: radial-gradient(circle at top, #1b1b3a, #0b0b14); }
+        .hero-image-container { margin-bottom: 25px; }
+        .hero-image { max-width: 280px; width: 100%; border-radius: 20px; box-shadow: 0 0 40px rgba(124, 124, 255, 0.2); }
+        
+        /* Düzeltilen Başlık Bölümü */
+        .hero h1 { 
+          font-size: 2.6rem; 
+          line-height: 1.3; 
+          margin: 15px 0; 
+          font-weight: 800;
+        }
+        .hero span { 
+          color: #7c7cff; 
+          font-size: 1.8rem; /* Slogan kısmını daha dengeli yaptım */
+          display: block;
+          font-weight: 500;
+          margin-top: 5px;
+        }
+        .hero p { max-width: 580px; margin: 10px auto; opacity: 0.8; font-size: 1rem; line-height: 1.6; }
+        .cta-button { margin-top: 35px; padding: 14px 28px; border-radius: 14px; border: none; background: #7c7cff; color: #000; font-weight: bold; cursor: not-allowed; opacity: 0.8; }
 
-        /* Sections */
-        .section { width: 100%; padding: 100px 20px; display: flex; justify-content: center; }
-        .section-inner { max-width: 1100px; width: 100%; text-align: center; }
-        .section h2 { font-size: 2.2rem; margin-bottom: 40px; }
+        .section { width: 100%; padding: 80px 20px; display: flex; justify-content: center; }
+        .section-inner { max-width: 1000px; width: 100%; text-align: center; }
+        .section h2 { font-size: 1.8rem; margin-bottom: 30px; color: #fff; }
         .dark { background: #0f0f1f; border-top: 1px solid #1f1f3a; border-bottom: 1px solid #1f1f3a; }
         
-        /* Grid & Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; justify-content: center; }
-        .card { background: #141428; padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(124, 124, 255, 0.05); transition: transform 0.3s ease; display: flex; flex-direction: column; align-items: center; }
-        .card h3 { color: #7c7cff; font-size: 1.4rem; margin-bottom: 15px; }
-        .card p { opacity: 0.8; line-height: 1.6; margin: 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 10px; justify-content: center; }
+        .card { background: #141428; padding: 35px 25px; border-radius: 18px; border: 1px solid rgba(124, 124, 255, 0.05); display: flex; flex-direction: column; align-items: center; }
+        .card h3 { color: #7c7cff; font-size: 1.25rem; margin-bottom: 12px; }
+        .card p { opacity: 0.75; line-height: 1.5; font-size: 0.95rem; }
 
-        /* Content Elements */
-        .center-text { max-width: 750px; margin: 0 auto; font-size: 1.15rem; line-height: 1.7; opacity: 0.9; }
-        .muted { opacity: 0.6; margin-top: 10px; }
-        .steps-container { display: flex; justify-content: center; margin-top: 20px; }
-        .steps { text-align: left; line-height: 2.5; font-size: 1.1rem; }
+        .center-text { max-width: 700px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6; opacity: 0.85; }
+        .muted { opacity: 0.6; margin-top: 8px; font-size: 0.9rem; }
+        .steps-container { display: flex; justify-content: center; margin-top: 15px; }
+        .steps { text-align: left; line-height: 2.2; font-size: 1rem; color: #eaeaf0; }
 
-        /* Footer */
-        footer { width: 100%; padding: 80px 20px; text-align: center; border-top: 1px solid #1f1f3a; opacity: 0.7; }
-        .dev { letter-spacing: 3px; font-size: 0.8rem; margin-top: 15px; opacity: 0.5; }
+        footer { width: 100%; padding: 60px 20px; text-align: center; border-top: 1px solid #1f1f3a; opacity: 0.6; font-size: 0.85rem; }
+        .dev { letter-spacing: 2px; font-size: 0.75rem; margin-top: 10px; opacity: 0.5; }
 
-        /* Cookie */
-        .cookie-banner { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 450px; background: #141428; padding: 25px; border-radius: 24px; border: 1px solid #7c7cff; z-index: 10000; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.7); }
-        .cookie-banner button { margin-top: 15px; background: #7c7cff; color: #000; border: none; padding: 12px 24px; border-radius: 12px; font-weight: bold; cursor: pointer; width: 100%; }
+        .cookie-banner { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 420px; background: #141428; padding: 20px; border-radius: 20px; border: 1px solid #7c7cff; z-index: 10000; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
+        .cookie-banner button { margin-top: 12px; background: #7c7cff; color: #000; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; }
 
-        /* Mobile */
         @media (max-width: 768px) {
-          .hero h1 { font-size: 2.5rem; }
-          .section { padding: 60px 20px; }
+          .hero h1 { font-size: 2.2rem; }
+          .hero span { font-size: 1.4rem; }
+          .section { padding: 50px 20px; }
           .grid { grid-template-columns: 1fr; }
         }
       `}</style>
