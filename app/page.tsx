@@ -2,12 +2,44 @@
 
 import React, { useState, useEffect } from "react";
 
+// Telefon içinde dönecek metinler
+const appFeatures = [
+  {
+    icon: "🚀",
+    title: "Coming Soon",
+    desc: "Mobile App coming to Play Store!",
+  },
+  {
+    icon: "🔔",
+    title: "Smart Reminders",
+    desc: "Focus on your tasks, not notifications.",
+  },
+  {
+    icon: "💎",
+    title: "Rewards System",
+    desc: "Build consistency and earn rewards.",
+  },
+];
+
 export default function Home() {
   const [showCookie, setShowCookie] = useState(false);
+  const [featureIndex, setFeatureIndex] = useState(0);
 
+  // Cookie Uyarısını Göster
   useEffect(() => {
     setShowCookie(true);
   }, []);
+
+  // Telefon içindeki metinleri her 3 saniyede bir değiştir
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFeatureIndex((prevIndex) => (prevIndex + 1) % appFeatures.length);
+    }, 3000); // 3000ms = 3 saniye
+
+    return () => clearInterval(timer); // Bileşen kaldırıldığında zamanlayıcıyı temizle
+  }, []);
+
+  const currentFeature = appFeatures[featureIndex];
 
   return (
     <main>
@@ -20,24 +52,28 @@ export default function Home() {
       </nav>
 
       <section className="hero">
-        {/* --- TELEFON MOCKUP BAŞLANGICI --- */}
-        <div className="mockup-wrapper">
-          <div className="iphone-x">
-            <div className="side">
-              <div className="screen">
-                {/* Burası telefonun içindeki ekran. Kendi siteni iframe olarak çağırıyoruz */}
-                <iframe 
-                  src="https://tick1.vercel.app/" 
-                  className="mockup-iframe"
-                  title="Tick Preview"
-                />
+        {/* --- DİNAMİK TELEFON MOCKUP BAŞLANGICI --- */}
+        <div className="hero-mockup-section">
+          <div className="iphone-frame">
+            <div className="iphone-screen">
+              {/* Burası dinamik olarak değişen içerik */}
+              <div className="app-content">
+                <div className="app-header">
+                  <img src="/icon.png" alt="Tick App Icon" className="app-icon" />
+                  <span className="app-name">Tick</span>
+                </div>
+                <div className="feature-display fade-in" key={featureIndex}>
+                  <div className="feature-icon">{currentFeature.icon}</div>
+                  <h3>{currentFeature.title}</h3>
+                  <p>{currentFeature.desc}</p>
+                </div>
               </div>
             </div>
             {/* Fiziksel detaylar */}
             <div className="notch"></div>
           </div>
         </div>
-        {/* --- TELEFON MOCKUP BİTİŞİ --- */}
+        {/* --- DİNAMİK TELEFON MOCKUP BİTİŞİ --- */}
 
         <h1>
           Tick <br />
@@ -207,64 +243,58 @@ export default function Home() {
         footer { padding: 45px 20px; text-align: center; font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #1f1f3a; }
         footer .dev { margin-top: 8px; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; }
 
-        /* Mockup Özel Stilleri */
-        .mockup-wrapper {
+        /* --- Yeni Dinamik Mockup Stilleri --- */
+        .hero-mockup-section {
           display: flex;
           justify-content: center;
-          margin-bottom: 40px;
-          perspective: 1000px;
+          margin-bottom: 50px;
         }
 
-        .iphone-x {
+        .iphone-frame {
           position: relative;
-          width: 280px;
-          height: 580px;
-          background: #222;
-          border-radius: 40px;
-          border: 12px solid #333;
-          box-shadow: 0 0 30px rgba(124, 124, 255, 0.4);
+          width: 290px;
+          height: 600px;
+          background: #1a1a1a;
+          border: 10px solid #2a2a2a;
+          border-radius: 44px;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+          overflow: hidden;
         }
 
-        .iphone-x .notch {
+        .iphone-frame .notch {
           position: absolute;
           top: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: 140px;
-          height: 25px;
-          background: #333;
-          border-bottom-left-radius: 18px;
-          border-bottom-right-radius: 18px;
+          width: 150px;
+          height: 26px;
+          background: #2a2a2a;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
           z-index: 10;
         }
 
-        .iphone-x .screen {
+        .iphone-screen {
           width: 100%;
           height: 100%;
-          border-radius: 28px;
+          border-radius: 34px;
           overflow: hidden;
-          background: #fff;
+          background: #10101a; /* Uygulamanın iç arka planı */
+          padding: 30px 15px; /* İçerik için boşluk */
+          display: flex;
+          flex-direction: column;
         }
 
-        .mockup-iframe {
-          width: 100%;
+        .app-content {
+          color: #eaeaf0;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
           height: 100%;
-          border: none;
-          zoom: 1;
         }
 
-        @media (max-width: 480px) {
-          .iphone-x {
-            width: 220px;
-            height: 450px;
-            border-width: 8px;
-          }
-          .iphone-x .notch {
-            width: 100px;
-            height: 20px;
-          }
-        }
-      `}</style>
-    </main>
-  );
-}
+        .app-header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
