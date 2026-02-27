@@ -20,17 +20,24 @@ export default function Home() {
       </nav>
 
       <section className="hero">
-        <div style={{ marginBottom: "20px" }}>
-          <img
-            src="/opengraph-image.png"
-            alt="Tick App Preview"
-            style={{
-              maxWidth: "300px",
-              borderRadius: "20px",
-              boxShadow: "0 0 30px rgba(124, 124, 255, 0.3)",
-            }}
-          />
+        {/* --- TELEFON MOCKUP BAŞLANGICI --- */}
+        <div className="mockup-wrapper">
+          <div className="iphone-x">
+            <div className="side">
+              <div className="screen">
+                {/* Burası telefonun içindeki ekran. Kendi siteni iframe olarak çağırıyoruz */}
+                <iframe 
+                  src="https://tick1.vercel.app/" 
+                  className="mockup-iframe"
+                  title="Tick Preview"
+                />
+              </div>
+            </div>
+            {/* Fiziksel detaylar */}
+            <div className="notch"></div>
+          </div>
         </div>
+        {/* --- TELEFON MOCKUP BİTİŞİ --- */}
 
         <h1>
           Tick <br />
@@ -45,6 +52,7 @@ export default function Home() {
         <button disabled>Mobile App — Coming Soon</button>
       </section>
 
+      {/* DİĞER SECTİONLARIN (DEĞİŞMEDİ) */}
       <section className="section">
         <h2>A Different Kind of Reminder App</h2>
         <p className="center-text">
@@ -198,6 +206,64 @@ export default function Home() {
         .steps { max-width: 520px; margin: auto; line-height: 2; }
         footer { padding: 45px 20px; text-align: center; font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #1f1f3a; }
         footer .dev { margin-top: 8px; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.6; }
+
+        /* Mockup Özel Stilleri */
+        .mockup-wrapper {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 40px;
+          perspective: 1000px;
+        }
+
+        .iphone-x {
+          position: relative;
+          width: 280px;
+          height: 580px;
+          background: #222;
+          border-radius: 40px;
+          border: 12px solid #333;
+          box-shadow: 0 0 30px rgba(124, 124, 255, 0.4);
+        }
+
+        .iphone-x .notch {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 140px;
+          height: 25px;
+          background: #333;
+          border-bottom-left-radius: 18px;
+          border-bottom-right-radius: 18px;
+          z-index: 10;
+        }
+
+        .iphone-x .screen {
+          width: 100%;
+          height: 100%;
+          border-radius: 28px;
+          overflow: hidden;
+          background: #fff;
+        }
+
+        .mockup-iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          zoom: 1;
+        }
+
+        @media (max-width: 480px) {
+          .iphone-x {
+            width: 220px;
+            height: 450px;
+            border-width: 8px;
+          }
+          .iphone-x .notch {
+            width: 100px;
+            height: 20px;
+          }
+        }
       `}</style>
     </main>
   );
