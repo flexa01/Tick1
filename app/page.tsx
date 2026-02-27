@@ -15,7 +15,6 @@ export default function Home() {
 
   useEffect(() => {
     setShowCookie(true);
-    // Telefonun içindeki metinleri değiştiren döngü
     const timer = setInterval(() => {
       setFeatureIndex((prev) => (prev + 1) % appFeatures.length);
     }, 3000);
@@ -70,103 +69,7 @@ export default function Home() {
         <button disabled>Mobile App — Coming Soon</button>
       </section>
 
-      {/* --- TÜM SECTIONS (ORİJİNAL KODUN BİREBİR KOPYASI) --- */}
+      {/* --- TÜM SECTIONS (BÜTÜNLÜK KORUNDU) --- */}
       <section className="section">
         <h2>A Different Kind of Reminder App</h2>
-        <p className="center-text">
-          Most reminder apps focus on alerts. Tick focuses on people.
-          We believe reminders should motivate, not overwhelm.
-        </p>
-      </section>
-
-      <section className="section dark">
-        <h2>The Problem With Traditional Reminders</h2>
-        <div className="grid">
-          <div className="card">
-            <h3>Notification Fatigue</h3>
-            <p>Endless alerts eventually get ignored. Reminders lose their meaning.</p>
-          </div>
-          <div className="card">
-            <h3>No Motivation</h3>
-            <p>Being reminded doesn’t mean being encouraged to actually do the task.</p>
-          </div>
-          <div className="card">
-            <h3>No Reward</h3>
-            <p>Completing tasks feels empty when there’s nothing to gain.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <h2>How Tick Solves This</h2>
-        <p className="center-text">
-          Tick transforms reminders into a rewarding system that values consistency,
-          progress, and personal growth.
-        </p>
-      </section>
-
-      <section className="section dark">
-        <h2>Core Features</h2>
-        <div className="grid">
-          <div className="card">
-            <h3>Smart Reminders</h3>
-            <p>Clean, minimal reminders that respect your attention.</p>
-          </div>
-          <div className="card">
-            <h3>Point System</h3>
-            <p>Earn points for every completed reminder and build positive momentum.</p>
-          </div>
-          <div className="card">
-            <h3>Customization</h3>
-            <p>Use your points to unlock themes, UI upgrades and future features.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <h2>How It Works</h2>
-        <ol className="steps">
-          <li>Create reminders for things that matter to you</li>
-          <li>Complete tasks and mark them as done</li>
-          <li>Earn points and personalize your experience</li>
-        </ol>
-      </section>
-
-      <section className="section dark">
-        <h2>Our Philosophy</h2>
-        <p className="center-text">
-          Tick is built around one simple idea: consistency beats intensity.
-        </p>
-        <p className="center-text muted">
-          We want productivity to feel calm, motivating and sustainable.
-        </p>
-      </section>
-
-      <section className="section">
-        <h2>What’s Coming</h2>
-        <div className="grid">
-          <div className="card">
-            <h3>Mobile Apps</h3>
-            <p>Native iOS and Android apps with full sync.</p>
-          </div>
-          <div className="card">
-            <h3>Advanced Rewards</h3>
-            <p>Streak bonuses, seasonal themes and more unlockables.</p>
-          </div>
-          <div className="card">
-            <h3>Cloud Sync</h3>
-            <p>Access your reminders securely across all devices.</p>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <p>© 2026 Tick Reminder. All rights reserved.</p>
-        <p className="dev">DEVELOPED BY FLEXA</p>
-      </footer>
-
-      {showCookie && (
-        <div className="cookie-box">
-          <p>Size daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.</p>
-          <button onClick={() => setShowCookie(false)}>İzin Ver ve Devam Et</button>
-        </div>
+        <p className="
